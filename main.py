@@ -1,14 +1,3 @@
-'''
-1) нарисовать поле, сделать каркас игры        +
-2) добавить игрока (в виде тарелки)            +
-3) добавить ещё одного игрока                  +
-4) сделать мячик, задать ему смену траектории  +
-5) сделать систему балов, надписи              +
-
-ДОП:
-6) меню
-7) 2 режима игры (с другим игроком и компьютером)
-'''
 
 import pygame
 import sys
@@ -47,9 +36,9 @@ def show_back():
 # движение бота
 def bot_mov():
     if Ball.centerx > Bot.centerx and Ball.centery < 300:
-        Bot.x += 2
+        Bot.x += 3
     if Ball.centerx < Bot.centerx and Ball.centery < 300:
-        Bot.x -= 2
+        Bot.x -= 3
 
 
 clock = pygame.time.Clock()
@@ -107,9 +96,9 @@ def raund_begine():
     Ball_y = 0
     Ball = pygame.rect.Rect(245, 340, 20, 20)
 
-    if count_bot == 2:
+    if count_bot == 10:
         ifWin = False
-    elif count_player == 2:
+    elif count_player == 10:
         ifWin = True
 
     else:
